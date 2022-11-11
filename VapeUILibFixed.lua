@@ -7,6 +7,7 @@ local Mouse = LocalPlayer:GetMouse()
 local PresetColor = Color3.fromRGB(44, 120, 224)
 local CloseBind = Enum.KeyCode.RightControl
 
+local uitoggled = false
 local ui = Instance.new("ScreenGui")
 ui.Name = "ui"
 ui.Parent = game.CoreGui
@@ -140,7 +141,6 @@ function lib:Window(text, preset, closebind)
 
     MakeDraggable(DragFrame, Main)
 
-    local uitoggled = false
     game.RunService.Stepped:connect(function()
         UserInputService.InputBegan:Connect(
             function(io, p)
